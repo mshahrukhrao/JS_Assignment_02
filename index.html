@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Character Type Checker</title>
+<script>
+function checkCharacterType(char) {
+    // Check if the input is a digit
+    if (!isNaN(parseInt(char))) {
+        document.getElementById("result").innerHTML = "The input '" + char + "' is a number.";
+    }
+    // Check if the input is an uppercase letter
+    else if (char >= 'A' && char <= 'Z') {
+        document.getElementById("result").innerHTML = "The input '" + char + "' is an uppercase letter.";
+    }
+    // Check if the input is a lowercase letter
+    else if (char >= 'a' && char <= 'z') {
+        document.getElementById("result").innerHTML = "The input '" + char + "' is a lowercase letter.";
+    }
+    else {
+        document.getElementById("result").innerHTML = "The input '" + char + "' is not a number or letter.";
+    }
+}
+
+function handleInput() {
+    var inputChar = document.getElementById("charInput").value;
+    checkCharacterType(inputChar);
+}
+</script>
+</head>
+<body>
+
+<h2>Character Type Checker</h2>
+<p>Enter a character (number or string): <input type="text" id="charInput"></p>
+<button onclick="handleInput()">Check</button>
+<p id="result"></p>
+
+</body>
+</html>
